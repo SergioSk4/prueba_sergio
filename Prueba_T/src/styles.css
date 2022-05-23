@@ -1,0 +1,207 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: white;
+}
+
+/* Login Page */
+.main-ct-auth {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.main-ct-auth .login-form {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  border-radius: 10px;
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px, rgba(0, 0, 0, 0.04) 0px -3px 5px;
+  text-align: center;
+}
+
+.login-form h4 {
+  font-size: 35px;
+}
+
+.login-form .input-container {
+  position: relative;
+}
+
+.login-form .input-container i {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  font-size: 20px;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.input-container i:hover {
+  opacity: 1;
+}
+
+.login-form h5 {
+  color: #bfbfbf;
+  margin-bottom: 40px;
+}
+
+.login-form form {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.login-form form input {
+  width: 100%;
+  background: #f0f0f0;
+  border: none;
+  border-radius: 10px;
+  height: 50px;
+  margin-bottom: 10px;
+  padding: 15px;
+}
+
+.sign-btn {
+  width: 100%;
+  margin-top: 30px;
+  border-radius: 25px;
+  height: 40px;
+  background: #75efeb;
+  border: none;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.login-form form .log-err {
+  text-align: left;
+  display: block;
+  width: 100%;
+  background-color: #fa7373;
+  padding: 5px;
+  padding-left: 15px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  border-radius: 10px;
+  color: white;
+}
+
+.login-form p {
+  color: #bfbfbf;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.login-form p a {
+  text-decoration: none;
+  color: #75efeb;
+}
+
+/* User Style */
+
+.main-ct-user {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.main-ct-user .user-cont {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px, rgba(0, 0, 0, 0.04) 0px -3px 5px;
+}
+
+.user-cont .head {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.user-cont .user-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.section {
+  margin-bottom: 15px;
+  width: 100%;
+  padding: 10px;
+}
+
+.section .section-head {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.section .button {
+  width: 100%;
+  max-width: 200px;
+  background-color: #3d3d3d;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.1s ease;
+}
+
+.section .button:hover {
+  background-color: #3dcc64;
+}
+
+.hint {
+  margin-top: 5px;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.input-hide {
+  display: none;
+}
+
+.section .section-cont h6 {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.section .section-cont .error {
+  text-align: left;
+  display: block;
+  width: 90%;
+  background-color: #fa7373;
+  padding: 5px;
+  padding-left: 15px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  border-radius: 10px;
+  color: white;
+}
+
+/* Global style */
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable.hover:hover {
+  color: #222222;
+}

@@ -1,0 +1,26 @@
+<!-- Crea un contenedor para AUTH -->
+<div class="main-ct-auth">
+  <div class="login-form">
+    <h4>Bienvenido</h4>
+    <h5>Inicia sesión en tu cuenta</h5>
+    <form [formGroup]="loginForm" (submit)="logIn()">
+      <input type="text" placeholder="Email" formControlName="email" />
+      <span class="log-err" *ngIf="campoNoValido('email')"
+        >Correo no válido</span
+      >
+      <input
+        type="password"
+        placeholder="Password"
+        formControlName="password"
+      />
+      <span class="log-err" *ngIf="campoNoValido('password')"
+        >Contraseña no válida</span
+      >
+      <span class="log-err" *ngIf="error">Correo o contraseña incorrecta</span>
+      <button type="submit" class="sign-btn">Ingresar</button>
+    </form>
+    <p>¿No tienes cuenta? <a routerLink="/auth/registro"> Registrate</a></p>
+    <p (click)="testBack()" class="clickable hover">Ping Backend</p>
+    <p *ngIf="ping">Backend Online</p>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+<div class="main-ct-user">
+  <div class="user-cont">
+    <div class="head">
+      <h3>¡Bienvenido {{ userName }}!</h3>
+    </div>
+    <div class="user-sections">
+      <div class="section">
+        <div class="section-head">
+          <h5>Cargar CV</h5>
+        </div>
+        <div class="section-cont">
+          <input
+            type="file"
+            id="cv_pdf"
+            class="input-hide"
+            accept="application/pdf"
+            (change)="uploadPdf($event)"
+          />
+          <label for="cv_pdf" class="button" style="display: block"
+            >Select Image</label
+          >
+          <p class="hint">Solo PDF, máximo 5MB</p>
+
+          <h6 *ngIf="fileName">File: {{ fileName }}</h6>
+          <p class="error" *ngIf="error">{{ error }}</p>
+          <p class="hint" *ngIf="uploadStatus">{{ uploadStatus }}</p>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-head">
+          <h5>Mostrar CV</h5>
+        </div>
+        <div class="section-button">
+          <button class="button" (click)="downloadPdf()">Descarga tu CV</button>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-head">
+          <h5>Cargar Perfil</h5>
+        </div>
+        <div class="section-button">
+          <button class="button" (click)="getPerfil()">Obtener</button>
+          <p class="hint" style="margin-top: 10px">
+            {{ perfilResponse | json }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
