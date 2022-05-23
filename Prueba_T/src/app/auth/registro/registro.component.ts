@@ -34,6 +34,7 @@ export class RegistroComponent implements OnInit {
   );
 
   public error: boolean = false;
+  public errorMsg: string = '';
   public show1: boolean = false;
   public show2: boolean = false;
   public created: boolean = false;
@@ -71,6 +72,11 @@ export class RegistroComponent implements OnInit {
         (err) => {
           // Manejo de error
           this.error = true;
+          if (typeof err.error === 'string') {
+            this.errorMsg = 'Las contraseñas no coinciden';
+          } else {
+            this.errorMsg = 'El email ya fue tomado';
+          }
         }
       );
     }

@@ -183,7 +183,7 @@ body {
   font-size: 16px;
 }
 
-.section .section-cont .error {
+.error {
   text-align: left;
   display: block;
   width: 90%;
@@ -194,6 +194,7 @@ body {
   font-size: 14px;
   border-radius: 10px;
   color: white;
+  margin-top: 10px;
 }
 
 /* Global style */

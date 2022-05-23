@@ -10,9 +10,15 @@ import { UploadService } from '../../services/user/upload.service';
 export class DashboardComponent implements OnInit {
   public fileName: string = '';
   public userName: string = '';
-  public perfilResponse: any;
+  public perfilResponse: any = {
+    nombre: '',
+    email: '',
+    estado: '',
+    url: '',
+  };
   public blob: any;
   public error: string = '';
+  public downError: boolean = false;
   public uploadStatus: string = '';
   constructor(private userService: UploadService) {}
 
@@ -72,11 +78,19 @@ export class DashboardComponent implements OnInit {
   }
 
   downloadPdf() {
-    this.userService.getPdf().subscribe((data: any) => {
-      var link = document.createElement('a');
-      link.href = data.url;
-      link.download = 'cv.pdf';
-      link.click();
-    });
+    this.userService.getPdf().subscribe(
+      (data: any) => {
+        if (data.error) {
+          this.downError = true;
+        } else {
+          this.downError = false;
+          var link = document.createElement('a');
+          link.href = data.url;
+          link.download = 'cv.pdf';
+          link.click();
+        }
+      },
+      (err) => {}
+    );
   }
 }

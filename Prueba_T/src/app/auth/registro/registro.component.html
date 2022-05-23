@@ -46,7 +46,7 @@
       </div>
 
       <!-- Error -->
-      <span class="log-err" *ngIf="error">Verifica todos los campos</span>
+      <span class="log-err" *ngIf="error">{{ errorMsg }}</span>
       <button type="submit" class="sign-btn">Ingresar</button>
     </form>
     <p>¿Ya tienes cuenta? <a href="/auth/login">Ingresar</a></p>

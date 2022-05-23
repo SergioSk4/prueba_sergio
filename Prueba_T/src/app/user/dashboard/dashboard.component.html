@@ -32,6 +32,7 @@
         </div>
         <div class="section-button">
           <button class="button" (click)="downloadPdf()">Descarga tu CV</button>
+          <p class="error" *ngIf="downError">No se ha enviado ningún CV</p>
         </div>
       </div>
       <div class="section">
@@ -40,8 +41,25 @@
         </div>
         <div class="section-button">
           <button class="button" (click)="getPerfil()">Obtener</button>
-          <p class="hint" style="margin-top: 10px">
-            {{ perfilResponse | json }}
+          <p
+            class="hint"
+            style="margin-top: 10px"
+            *ngIf="perfilResponse.nombre"
+          >
+            Nombre: {{ perfilResponse.nombre }}
+          </p>
+          <p class="hint" style="margin-top: 10px" *ngIf="perfilResponse.email">
+            Correo: {{ perfilResponse.email }}
+          </p>
+          <p class="hint" style="margin-top: 10px" *ngIf="perfilResponse.url">
+            URL: {{ perfilResponse.url }}
+          </p>
+          <p
+            class="hint"
+            style="margin-top: 10px"
+            *ngIf="perfilResponse.estado"
+          >
+            Estado: {{ perfilResponse.estado ? "Activo" : "Inactivo" }}
           </p>
         </div>
       </div>
